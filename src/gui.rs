@@ -63,7 +63,8 @@ impl eframe::App for GuiMenu {
                                 .show(ctx, |ui| {
                                     ui.horizontal(|ui| {
                                         if ui.button("Cancel").clicked() {
-                                            self.show_confirmation_dialog = false;
+                                            self.show_confirmation_dialog =
+                                                false;
                                         }
 
                                         if ui.button("Yes!").clicked() {
@@ -107,10 +108,12 @@ impl eframe::App for GuiMenu {
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.add_space(2.0);
             ui.vertical_centered(|ui| {
-                ui.label(egui::RichText::new("Take a Note: ")
-                    .heading()
-                    .strong()
-                    .color(egui::Color32::from_rgb(6, 165, 149)));
+                ui.label(
+                    egui::RichText::new("Take a Note: ")
+                        .heading()
+                        .strong()
+                        .color(egui::Color32::from_rgb(6, 165, 149)),
+                );
                 ui.text_edit_multiline(&mut self.note_txt);
             });
             ui.add_space(PADDING);
@@ -129,7 +132,9 @@ impl eframe::App for GuiMenu {
                         Ok(()) => {
                             match write_to_file(FILEPATH, &self.storage) {
                                 Ok(()) => (),
-                                Err(err) => println!("Unable to write to file: {err}"),
+                                Err(err) => {
+                                    println!("Unable to write to file: {err}")
+                                }
                             }
                         }
                         Err(err) => println!("Unable to store note: {err}"),
@@ -147,12 +152,16 @@ impl eframe::App for GuiMenu {
                             ui.label(
                                 egui::RichText::new(format!("{}:: ", key,))
                                     .size(20.0)
-                                    .color(egui::Color32::from_rgb(76, 116, 166)),
+                                    .color(egui::Color32::from_rgb(
+                                        76, 116, 166,
+                                    )),
                             );
                             ui.label(
                                 egui::RichText::new(format!("{}", value,))
                                     .size(25.0)
-                                    .color(egui::Color32::from_rgb(22, 146, 196)),
+                                    .color(egui::Color32::from_rgb(
+                                        22, 146, 196,
+                                    )),
                             );
                         });
                     }

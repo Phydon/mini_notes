@@ -1,6 +1,11 @@
 use chrono::Local;
 
-use std::{collections::BTreeMap, error::Error, fs, io::{prelude::*, BufReader, Write}};
+use std::{
+    collections::BTreeMap,
+    error::Error,
+    fs,
+    io::{prelude::*, BufReader, Write},
+};
 
 pub fn get_date_and_time() -> String {
     Local::now().to_string().replace(":", "_")
@@ -29,7 +34,10 @@ pub fn read_file(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     Ok(storage)
 }
 
-pub fn write_to_file(path: &str, content: &BTreeMap<String, String>) -> Result<(), Box<dyn Error>> {
+pub fn write_to_file(
+    path: &str,
+    content: &BTreeMap<String, String>,
+) -> Result<(), Box<dyn Error>> {
     let mut file = fs::OpenOptions::new()
         .append(true)
         .create(true)
