@@ -40,16 +40,21 @@ impl eframe::App for GuiMenu {
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             ui.add_space(2.0);
             egui::menu::bar(ui, |ui| {
-                ui.with_layout(egui::Layout::left_to_right(egui::Align::LEFT), |ui| {
-                    ui.collapsing("Themes", |ui| {
-                        egui::widgets::global_dark_light_mode_buttons(ui);
-                    });
-                });
+                ui.with_layout(
+                    egui::Layout::left_to_right(egui::Align::LEFT),
+                    |ui| {
+                        ui.collapsing("Themes", |ui| {
+                            egui::widgets::global_dark_light_mode_buttons(ui);
+                        });
+                    },
+                );
 
-                ui.with_layout(egui::Layout::right_to_left(egui::Align::RIGHT), |ui| {
-                    egui::reset_button(ui, self);
-                });
-            
+                ui.with_layout(
+                    egui::Layout::right_to_left(egui::Align::RIGHT),
+                    |ui| {
+                        egui::reset_button(ui, self);
+                    },
+                );
             });
             ui.add_space(2.0);
         });
@@ -57,7 +62,12 @@ impl eframe::App for GuiMenu {
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             ui.add_space(4.0);
             ui.vertical_centered(|ui| {
-                ui.label(egui::RichText::new("MiniNotes").size(50.0).strong().color(egui::Color32::from_rgb(171, 39, 79)));
+                ui.label(
+                    egui::RichText::new("MiniNotes")
+                        .size(50.0)
+                        .strong()
+                        .color(egui::Color32::from_rgb(171, 39, 79)),
+                );
             });
             ui.add_space(8.0);
         });
@@ -102,20 +112,32 @@ impl eframe::App for GuiMenu {
             });
             ui.add_space(PADDING);
             ui.horizontal(|ui| {
-                ui.colored_label(egui::Color32::from_rgb(128, 140, 255), "Your Note: "); // Shortcut version
-                ui.label(egui::RichText::new(format!(
-                    "{}",
-                    self.note_txt,
-                )).size(20.0).italics());
+                ui.colored_label(
+                    egui::Color32::from_rgb(128, 140, 255),
+                    "Your Note: ",
+                ); // Shortcut version
+                ui.label(
+                    egui::RichText::new(format!("{}", self.note_txt,))
+                        .size(20.0)
+                        .italics(),
+                );
             });
 
             ui.vertical_centered(|ui| {
-                if ui.add_sized([240., 80.], egui::Button::new("Save")).on_hover_text("save your note").clicked() {
+                if ui
+                    .add_sized([240., 80.], egui::Button::new("Save"))
+                    .on_hover_text("save your note")
+                    .clicked()
+                {
                     self.idx = get_date_and_time();
-                    match store_notes(&mut self.storage, &self.idx, &self.note_txt) {
+                    match store_notes(
+                        &mut self.storage,
+                        &self.idx,
+                        &self.note_txt,
+                    ) {
                         Ok(()) => {
                             println!("Note stored");
-                        }                        
+                        }
                         Err(err) => println!("Unable to store note: {err}"),
                     }
                 }
@@ -126,16 +148,17 @@ impl eframe::App for GuiMenu {
 
             ui.add_space(2.0);
             egui::containers::ScrollArea::vertical().show(ui, |ui| {
-                for (key, value) in &self.storage{
+                for (key, value) in &self.storage {
                     ui.horizontal(|ui| {
-                        ui.label(egui::RichText::new(format!(
-                            "{}:: ",
-                            key,
-                        )).size(20.0).color(egui::Color32::from_rgb(110, 255, 110)));
-                        ui.label(egui::RichText::new(format!(
-                            "{}",
-                            value,
-                        )).size(25.0));
+                        ui.label(
+                            egui::RichText::new(format!("{}:: ", key,))
+                                .size(20.0)
+                                .color(egui::Color32::from_rgb(110, 255, 110)),
+                        );
+                        ui.label(
+                            egui::RichText::new(format!("{}", value,))
+                                .size(25.0),
+                        );
                     });
                 }
             });
