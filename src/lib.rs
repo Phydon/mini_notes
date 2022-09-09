@@ -20,7 +20,9 @@ pub fn store_notes(
     Ok(())
 }
 
-pub fn read_file(path: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
+pub fn read_file(
+    path: &str,
+) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
     let file = fs::OpenOptions::new().read(true).open(path)?;
 
     let reader = BufReader::new(file);
@@ -35,7 +37,10 @@ pub fn read_file(path: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>>
     for line in lines {
         let mut tmp_storage: Vec<&str> = Vec::new();
         tmp_storage = line.split(":").collect();
-        storage.insert(tmp_storage[0].trim().to_string(), tmp_storage[1].trim().to_string());
+        storage.insert(
+            tmp_storage[0].trim().to_string(),
+            tmp_storage[1].trim().to_string(),
+        );
         tmp_storage.clear();
     }
 

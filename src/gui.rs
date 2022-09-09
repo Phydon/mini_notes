@@ -1,8 +1,7 @@
-// TODO read old notes from file on application start up
 use crate::lib::*;
 
 use eframe::egui;
-use log::{error, warn};
+use log::warn;
 
 use std::collections::BTreeMap;
 
@@ -124,7 +123,8 @@ impl eframe::App for GuiMenu {
                         Ok(()) => {
                             match write_to_file(FILEPATH, &self.storage) {
                                 Ok(()) => {
-                                    let success_msg: &str = "Note written to file";
+                                    let success_msg: &str =
+                                        "Note written to file";
                                     self.msg = success_msg.to_string();
                                     self.warn.clear();
                                 }
@@ -168,7 +168,13 @@ impl eframe::App for GuiMenu {
                 ui.with_layout(
                     egui::Layout::right_to_left(egui::Align::RIGHT),
                     |ui| {
-                        if ui.add_sized([120., 25.], egui::Button::new("Load notes")).clicked() {
+                        if ui
+                            .add_sized(
+                                [120., 25.],
+                                egui::Button::new("Load notes"),
+                            )
+                            .clicked()
+                        {
                             match read_file(FILEPATH) {
                                 Ok(container) => {
                                     let info: &str = "Notes loaded";
@@ -189,7 +195,6 @@ impl eframe::App for GuiMenu {
 
             ui.vertical_centered_justified(|ui| {
                 egui::containers::ScrollArea::both().show(ui, |ui| {
-
                     for (key, value) in &self.storage {
                         ui.horizontal_wrapped(|ui| {
                             ui.label(
