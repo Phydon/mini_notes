@@ -2,10 +2,11 @@
 use crate::lib::*;
 
 use eframe::egui;
+use log::{error, info, warn};
 
 use std::collections::BTreeMap;
 
-const FILEPATH: &str = "./my_mininotes.txt";
+const FILEPATH: &str = "./temp/my_mininotes.txt";
 const WINDOW_HEIGHT: f32 = 600.0;
 const WINDOW_WIDTH: f32 = 960.0;
 const CENTER: (f32, f32) = (
@@ -19,6 +20,7 @@ pub struct GuiMenu {
     note_txt: String,
     idx: String,
     storage: BTreeMap<String, String>,
+    warn: String,
     allowed_to_close: bool,
     show_confirmation_dialog: bool,
 }
@@ -35,6 +37,7 @@ impl eframe::App for GuiMenu {
             note_txt: _,
             idx: _,
             storage: _,
+            warn: _,
             allowed_to_close: _,
             show_confirmation_dialog: _,
         } = self;
@@ -56,23 +59,6 @@ impl eframe::App for GuiMenu {
                     |ui| {
                         if ui.add(egui::Button::new("❌")).clicked() {
                             self.on_close_event();
-                            egui::Window::new("Do you want to quit?")
-                                .collapsible(false)
-                                .resizable(false)
-                                .default_pos(CENTER)
-                                .show(ctx, |ui| {
-                                    ui.horizontal(|ui| {
-                                        if ui.button("Cancel").clicked() {
-                                            self.show_confirmation_dialog =
-                                                false;
-                                        }
-
-                                        if ui.button("Yes!").clicked() {
-                                            self.allowed_to_close = true;
-                                            frame.close();
-                                        }
-                                    });
-                                });
                         }
                         egui::reset_button(ui, self);
                     },
@@ -133,14 +119,27 @@ impl eframe::App for GuiMenu {
                             match write_to_file(FILEPATH, &self.storage) {
                                 Ok(()) => (),
                                 Err(err) => {
-                                    println!("Unable to write to file: {err}")
+                                    let err_msg: &str = "Unable to write to file";
+                                    self.warn = err_msg.to_string();
+                                    warn!("{err_msg}: {err}")
                                 }
                             }
                         }
-                        Err(err) => println!("Unable to store note: {err}"),
+                        Err(err) => {
+                            let err_msg: &str = "Unable to store note";
+                            self.warn = err_msg.to_string();
+                            warn!("{err_msg}: {err}")
+                        }
                     }
                 }
                 ui.add_space(PADDING);
+
+                ui.label(egui::RichText::new(format!("{}", self.warn))
+                    .size(20.0)
+                    .italics()
+                    .color(egui::Color32::from_rgb(
+                            156, 16, 39
+                    )));
             });
             ui.separator();
 
@@ -178,7 +177,8 @@ impl eframe::App for GuiMenu {
                     .show(ctx, |ui| {
                         ui.horizontal(|ui| {
                             if ui.button("Cancel").clicked() {
-                                self.show_confirmation_dialog = false;
+                                self.show_confirmation_dialog =
+                                    false;
                             }
 
                             if ui.button("Yes!").clicked() {

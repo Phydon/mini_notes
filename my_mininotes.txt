@@ -1,3 +1,0 @@
-2022-09-08 21_19_57.893113680 +02_00: my test note
-2022-09-08 21_22_47.728509536 +02_00: yet another test note
-multiline testing
