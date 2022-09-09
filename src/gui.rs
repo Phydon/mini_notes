@@ -6,9 +6,9 @@ use log::{error, info, warn};
 
 use std::collections::BTreeMap;
 
-const FILEPATH: &str = "./temp/my_mininotes.txt";
+const FILEPATH: &str = "./my_mininotes.txt";
+const WINDOW_WIDTH: f32 = 540.0;
 const WINDOW_HEIGHT: f32 = 600.0;
-const WINDOW_WIDTH: f32 = 960.0;
 const CENTER: (f32, f32) = (
     (WINDOW_WIDTH - WINDOW_WIDTH * 0.60),
     (WINDOW_HEIGHT - WINDOW_HEIGHT * 0.5),
@@ -119,7 +119,8 @@ impl eframe::App for GuiMenu {
                             match write_to_file(FILEPATH, &self.storage) {
                                 Ok(()) => (),
                                 Err(err) => {
-                                    let err_msg: &str = "Unable to write to file";
+                                    let err_msg: &str =
+                                        "Unable to write to file";
                                     self.warn = err_msg.to_string();
                                     warn!("{err_msg}: {err}")
                                 }
@@ -132,14 +133,14 @@ impl eframe::App for GuiMenu {
                         }
                     }
                 }
-                ui.add_space(PADDING);
 
-                ui.label(egui::RichText::new(format!("{}", self.warn))
-                    .size(20.0)
-                    .italics()
-                    .color(egui::Color32::from_rgb(
-                            156, 16, 39
-                    )));
+                ui.label(
+                    egui::RichText::new(format!("{}", self.warn))
+                        .size(20.0)
+                        .italics()
+                        .color(egui::Color32::from_rgb(156, 16, 39)),
+                );
+                ui.add_space(PADDING);
             });
             ui.separator();
 
@@ -177,8 +178,7 @@ impl eframe::App for GuiMenu {
                     .show(ctx, |ui| {
                         ui.horizontal(|ui| {
                             if ui.button("Cancel").clicked() {
-                                self.show_confirmation_dialog =
-                                    false;
+                                self.show_confirmation_dialog = false;
                             }
 
                             if ui.button("Yes!").clicked() {

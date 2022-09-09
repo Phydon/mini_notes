@@ -4,3 +4,37 @@
 [2022-09-09 07:37:55.020434 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
 [2022-09-09 07:37:55.021192 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
 [2022-09-09 07:37:57.440956 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:47:16.673769 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 07:47:16.675119 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 07:47:19.656190 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:48:21.350024 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 07:48:21.351428 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 07:48:25.494299 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:49:50.126792 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 07:49:50.129656 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 07:49:52.919814 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:00.545115 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:00.981939 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:01.146186 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:01.280067 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:02.961433 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:03.358713 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:03.603794 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:03.774007 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:50:11.627648 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:55:41.244560 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 07:55:41.245765 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 07:55:46.801315 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:57:30.224418 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 07:57:30.229770 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 07:57:32.631499 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:57:36.153219 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:58:06.068626 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 07:58:06.070075 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 07:58:07.773772 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:58:09.822722 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:58:10.256419 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:58:10.411327 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 07:58:13.139316 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
+[2022-09-09 08:00:18.745393 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 08:00:18.746734 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1

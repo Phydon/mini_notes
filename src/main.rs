@@ -8,8 +8,8 @@ mod lib;
 use eframe::egui;
 use flexi_logger::{detailed_format, Duplicate, FileSpec, Logger};
 
+const WINDOW_WIDTH: f32 = 540.0;
 const WINDOW_HEIGHT: f32 = 600.0;
-const WINDOW_WIDTH: f32 = 960.0;
 
 fn main() {
     // initialize the logger
