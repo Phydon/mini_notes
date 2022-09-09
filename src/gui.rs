@@ -7,8 +7,8 @@ use log::{error, info, warn};
 use std::collections::BTreeMap;
 
 const FILEPATH: &str = "./my_mininotes.txt";
-const WINDOW_WIDTH: f32 = 540.0;
-const WINDOW_HEIGHT: f32 = 600.0;
+const WINDOW_WIDTH: f32 = 380.0;
+const WINDOW_HEIGHT: f32 = 560.0;
 const CENTER: (f32, f32) = (
     (WINDOW_WIDTH - WINDOW_WIDTH * 0.60),
     (WINDOW_HEIGHT - WINDOW_HEIGHT * 0.5),
@@ -69,7 +69,7 @@ impl eframe::App for GuiMenu {
 
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             ui.add_space(3.0);
-            ui.vertical_centered(|ui| {
+            ui.vertical_centered_justified(|ui| {
                 ui.label(
                     egui::RichText::new("MiniNotes")
                         .size(50.0)
@@ -82,7 +82,7 @@ impl eframe::App for GuiMenu {
 
         egui::TopBottomPanel::bottom("bottom_panel").show(ctx, |ui| {
             ui.add_space(2.0);
-            ui.vertical_centered(|ui| {
+            ui.vertical_centered_justified(|ui| {
                 let tooltip_text = "PoweredByRust";
                 ui.hyperlink("leann.phydon@gmail.com")
                     .on_hover_text(tooltip_text);
@@ -93,7 +93,7 @@ impl eframe::App for GuiMenu {
         // CentralPanel must be added after all other panels!
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.add_space(2.0);
-            ui.vertical_centered(|ui| {
+            ui.vertical_centered_justified(|ui| {
                 ui.label(
                     egui::RichText::new("Take a Note: ")
                         .heading()
@@ -145,10 +145,10 @@ impl eframe::App for GuiMenu {
             ui.separator();
 
             ui.add_space(2.0);
-            ui.vertical_centered(|ui| {
+            ui.vertical_centered_justified(|ui| {
                 egui::containers::ScrollArea::both().show(ui, |ui| {
                     for (key, value) in &self.storage {
-                        ui.horizontal(|ui| {
+                        ui.horizontal_wrapped(|ui| {
                             ui.label(
                                 egui::RichText::new(format!("{}:: ", key,))
                                     .size(20.0)
