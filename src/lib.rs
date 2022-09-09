@@ -20,15 +20,23 @@ pub fn store_notes(
     Ok(())
 }
 
-// FIXME return BTreeMap instead of Vec
-pub fn read_file(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
+pub fn read_file(path: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
     let file = fs::OpenOptions::new().read(true).open(path)?;
 
     let reader = BufReader::new(file);
-    let mut storage: Vec<String> = Vec::new();
+    let mut lines: Vec<String> = Vec::new();
 
     for line in reader.lines() {
-        storage.push(line.unwrap());
+        lines.push(line?);
+    }
+
+    let mut storage: BTreeMap<String, String> = BTreeMap::new();
+
+    for line in lines {
+        let mut tmp_storage: Vec<&str> = Vec::new();
+        tmp_storage = line.split(":").collect();
+        storage.insert(tmp_storage[0].trim().to_string(), tmp_storage[1].trim().to_string());
+        tmp_storage.clear();
     }
 
     Ok(storage)

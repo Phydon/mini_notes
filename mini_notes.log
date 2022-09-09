@@ -1,48 +1,155 @@
-[2022-09-09 07:37:20.283362 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:37:20.287518 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:37:26.565211 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:37:55.020434 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:37:55.021192 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:37:57.440956 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:47:16.673769 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:47:16.675119 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:47:19.656190 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:48:21.350024 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:48:21.351428 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:48:25.494299 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:49:50.126792 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:49:50.129656 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:49:52.919814 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:00.545115 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:00.981939 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:01.146186 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:01.280067 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:02.961433 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:03.358713 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:03.603794 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:03.774007 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:50:11.627648 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:55:41.244560 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:55:41.245765 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:55:46.801315 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:57:30.224418 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:57:30.229770 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:57:32.631499 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:57:36.153219 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:58:06.068626 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 07:58:06.070075 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 07:58:07.773772 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:58:09.822722 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:58:10.256419 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:58:10.411327 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 07:58:13.139316 +02:00] WARN [mini_notes::gui] src/gui.rs:124: Unable to write to file: No such file or directory (os error 2)
-[2022-09-09 08:00:18.745393 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 08:00:18.746734 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 08:21:09.786245 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 08:21:09.788030 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 08:23:48.539250 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 08:23:48.541214 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 08:25:48.344054 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 08:25:48.345660 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
-[2022-09-09 08:27:20.844799 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
-[2022-09-09 08:27:20.846026 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 20:45:32.963843 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 20:45:32.969142 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 20:46:31.126212 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 20:46:31.127061 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 21:37:51.757213 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 21:37:51.758176 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 21:39:15.487632 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 21:39:15.489009 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 21:39:15.648438 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:16.472611 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:16.494901 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.597494 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.607803 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.622998 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.634206 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.650436 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.668798 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.685825 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.699804 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.736024 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.752163 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.783765 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.815460 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.849856 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.879290 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.911132 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.944018 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:30.976330 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.006948 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.038605 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.070437 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.102553 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.135544 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.260483 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.264948 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.270935 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.276430 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.285108 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.303436 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.318108 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.340802 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.354227 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.390998 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.409664 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.441061 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.471953 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.503805 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:31.537086 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.553052 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.560698 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.570099 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.592021 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.605908 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.635934 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.644535 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.672402 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.684736 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.706277 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.733457 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.760187 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.801585 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.826357 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.860938 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.891981 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.923263 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.955322 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:32.986583 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.019135 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.052664 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.086093 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.119170 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.153346 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.371126 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.380110 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.389665 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.404498 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.429841 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.451376 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.492840 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.513951 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.558542 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.595123 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.811852 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.819503 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.827018 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.884544 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.890624 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:33.905359 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.037251 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.039878 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.050953 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.080084 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.086995 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.116543 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.152460 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.159153 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.189311 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.218742 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.225051 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.269707 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.291703 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.302786 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.318092 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.336089 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.350836 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.369829 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.397940 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.428484 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.451588 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.474955 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.618959 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.625634 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.634712 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.651434 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.666480 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.697825 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.702720 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.748502 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.753440 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.795698 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.800084 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.825074 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.833763 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.867349 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.885549 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.918140 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.949474 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:35.982441 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.016102 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.052277 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.080758 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.112987 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.147120 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.177414 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.533232 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.541808 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 21:39:36.554863 +02:00] WARN [mini_notes::gui] src/gui.rs:171: Unable to read file: No such file or directory (os error 2)
+[2022-09-09 22:21:43.226037 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:21:43.227073 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:25:45.436846 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:25:45.439346 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:32:57.986787 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:32:57.988161 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:36:01.060552 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:36:01.064576 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:37:00.298034 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:37:00.299597 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:37:47.573823 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:37:47.575094 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:39:29.455309 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:39:29.456447 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:39:42.539276 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:39:42.540580 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1
+[2022-09-09 22:43:25.797951 +02:00] WARN [winit::platform_impl::platform::x11::util::randr] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/util/randr.rs:23: XRandR reported that the display's 0mm in size, which is certifiably insane
+[2022-09-09 22:43:25.799169 +02:00] INFO [winit::platform_impl::platform::x11::window] /home/phydon/.cargo/registry/src/github.com-1ecc6299db9ec823/winit-0.27.2/src/platform_impl/linux/x11/window.rs:147: Guessed window scale factor: 1

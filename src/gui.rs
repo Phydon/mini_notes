@@ -2,7 +2,7 @@
 use crate::lib::*;
 
 use eframe::egui;
-use log::{error, info, warn};
+use log::{error, warn};
 
 use std::collections::BTreeMap;
 
@@ -16,10 +16,16 @@ const CENTER: (f32, f32) = (
 const PADDING: f32 = 10.0;
 
 #[derive(Default, PartialEq)]
-pub struct GuiMenu {
+struct Note {
     note_txt: String,
-    idx: String,
+    date: String,
+}
+
+#[derive(Default, PartialEq)]
+pub struct GuiMenu {
+    note: Note,
     storage: BTreeMap<String, String>,
+    msg: String,
     warn: String,
     allowed_to_close: bool,
     show_confirmation_dialog: bool,
@@ -34,9 +40,9 @@ impl eframe::App for GuiMenu {
     fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
         // for the reset button
         let Self {
-            note_txt: _,
-            idx: _,
+            note: _,
             storage: _,
+            msg: _,
             warn: _,
             allowed_to_close: _,
             show_confirmation_dialog: _,
@@ -100,7 +106,7 @@ impl eframe::App for GuiMenu {
                         .strong()
                         .color(egui::Color32::from_rgb(6, 165, 149)),
                 );
-                ui.text_edit_multiline(&mut self.note_txt);
+                ui.text_edit_multiline(&mut self.note.note_txt);
             });
             ui.add_space(PADDING);
 
@@ -109,19 +115,24 @@ impl eframe::App for GuiMenu {
                     .add_sized([120., 25.], egui::Button::new("Save"))
                     .clicked()
                 {
-                    self.idx = get_date_and_time();
+                    self.note.date = get_date_and_time();
                     match store_notes(
                         &mut self.storage,
-                        &self.idx,
-                        &self.note_txt,
+                        &self.note.date,
+                        &self.note.note_txt,
                     ) {
                         Ok(()) => {
                             match write_to_file(FILEPATH, &self.storage) {
-                                Ok(()) => (),
+                                Ok(()) => {
+                                    let success_msg: &str = "Note written to file";
+                                    self.msg = success_msg.to_string();
+                                    self.warn.clear();
+                                }
                                 Err(err) => {
                                     let err_msg: &str =
                                         "Unable to write to file";
                                     self.warn = err_msg.to_string();
+                                    self.msg.clear();
                                     warn!("{err_msg}: {err}")
                                 }
                             }
@@ -129,15 +140,23 @@ impl eframe::App for GuiMenu {
                         Err(err) => {
                             let err_msg: &str = "Unable to store note";
                             self.warn = err_msg.to_string();
+                            self.msg.clear();
                             warn!("{err_msg}: {err}")
                         }
                     }
                 }
 
+                ui.add_space(PADDING);
+                ui.label(
+                    egui::RichText::new(format!("{}", self.msg))
+                        .size(20.0)
+                        .color(egui::Color32::from_rgb(78, 91, 173)),
+                );
+                ui.add_space(PADDING);
+
                 ui.label(
                     egui::RichText::new(format!("{}", self.warn))
                         .size(20.0)
-                        .italics()
                         .color(egui::Color32::from_rgb(156, 16, 39)),
                 );
                 ui.add_space(PADDING);
@@ -145,8 +164,32 @@ impl eframe::App for GuiMenu {
             ui.separator();
 
             ui.add_space(2.0);
+            egui::menu::bar(ui, |ui| {
+                ui.with_layout(
+                    egui::Layout::right_to_left(egui::Align::RIGHT),
+                    |ui| {
+                        if ui.add_sized([120., 25.], egui::Button::new("Load notes")).clicked() {
+                            match read_file(FILEPATH) {
+                                Ok(container) => {
+                                    let info: &str = "Notes loaded";
+                                    self.msg = info.to_string();
+                                    self.warn.clear();
+                                    self.storage = container
+                                }
+                                _ => {
+                                    let info: &str = "No notes found";
+                                    self.warn = info.to_string();
+                                    self.msg.clear();
+                                }
+                            }
+                        }
+                    },
+                );
+            });
+
             ui.vertical_centered_justified(|ui| {
                 egui::containers::ScrollArea::both().show(ui, |ui| {
+
                     for (key, value) in &self.storage {
                         ui.horizontal_wrapped(|ui| {
                             ui.label(
