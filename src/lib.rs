@@ -35,7 +35,7 @@ pub fn read_file(
     let mut storage: BTreeMap<String, String> = BTreeMap::new();
 
     for line in lines {
-        let mut tmp_storage: Vec<&str> = Vec::new();
+        let mut tmp_storage: Vec<&str>;
         tmp_storage = line.split(":").collect();
         storage.insert(
             tmp_storage[0].trim().to_string(),

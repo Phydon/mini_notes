@@ -8,6 +8,8 @@
 - date and time are added automatically to every note
 - a backup gets written to a file on your system
 - you can load older notes into the app
+- supportes light and dark themes
+- clear the app with the reset button
 
 ## Installation
 - not published yet
@@ -24,3 +26,5 @@
 
 ### Work In Progress
 - [ ] TODO: add more functionality
+- [ ] TODO: show notes in a table
+- [ ] TODO: better / prettier timestamps
