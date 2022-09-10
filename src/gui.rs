@@ -62,7 +62,8 @@ impl eframe::App for GuiMenu {
                 ui.with_layout(
                     egui::Layout::right_to_left(egui::Align::RIGHT),
                     |ui| {
-                        if ui.add(egui::Button::new("❌")).clicked() {
+                        // if ui.add(egui::Button::new("❌")).clicked() {
+                        if ui.add(egui::Button::new("🇽")).clicked() {
                             self.on_close_event();
                         }
                         egui::reset_button(ui, self);
@@ -88,9 +89,8 @@ impl eframe::App for GuiMenu {
         egui::TopBottomPanel::bottom("bottom_panel").show(ctx, |ui| {
             ui.add_space(2.0);
             ui.vertical_centered_justified(|ui| {
-                let tooltip_text = "PoweredByRust";
-                ui.hyperlink("leann.phydon@gmail.com")
-                    .on_hover_text(tooltip_text);
+                ui.hyperlink("leann.phydon@gmail.com");
+                ui.label(egui::RichText::new("PoweredByRust").color(egui::Color32::from_rgb(156, 16, 39)));
             });
             ui.add_space(2.0);
         });
@@ -100,18 +100,18 @@ impl eframe::App for GuiMenu {
             ui.add_space(2.0);
             ui.vertical_centered_justified(|ui| {
                 ui.label(
-                    egui::RichText::new("Take a Note: ")
+                    egui::RichText::new("✏ Take a Note: ")
                         .heading()
                         .strong()
                         .color(egui::Color32::from_rgb(6, 165, 149)),
                 );
-                ui.text_edit_multiline(&mut self.note.note_txt);
+                ui.add(egui::TextEdit::multiline(&mut self.note.note_txt).hint_text("Enter your text here"));
             });
             ui.add_space(PADDING);
 
             ui.vertical_centered(|ui| {
                 if ui
-                    .add_sized([120., 25.], egui::Button::new("Save"))
+                    .add_sized([120., 25.], egui::Button::new("💾 Save"))
                     .clicked()
                 {
                     self.note.date = get_date_and_time();
@@ -124,13 +124,13 @@ impl eframe::App for GuiMenu {
                             match write_to_file(FILEPATH, &self.storage) {
                                 Ok(()) => {
                                     let success_msg: &str =
-                                        "Note written to file";
+                                        "✔ Note written to file";
                                     self.msg = success_msg.to_string();
                                     self.warn.clear();
                                 }
                                 Err(err) => {
                                     let err_msg: &str =
-                                        "Unable to write to file";
+                                        "✖ Unable to write to file";
                                     self.warn = err_msg.to_string();
                                     self.msg.clear();
                                     warn!("{err_msg}: {err}")
@@ -138,7 +138,7 @@ impl eframe::App for GuiMenu {
                             }
                         }
                         Err(err) => {
-                            let err_msg: &str = "Unable to store note";
+                            let err_msg: &str = "✖ Unable to store note";
                             self.warn = err_msg.to_string();
                             self.msg.clear();
                             warn!("{err_msg}: {err}")
@@ -174,19 +174,19 @@ impl eframe::App for GuiMenu {
                         if ui
                             .add_sized(
                                 [120., 25.],
-                                egui::Button::new("Load notes"),
+                                egui::Button::new("⛃ Load notes"),
                             )
                             .clicked()
                         {
                             match read_file(FILEPATH) {
                                 Ok(container) => {
-                                    let info: &str = "Notes loaded";
+                                    let info: &str = "✔ Notes loaded";
                                     self.msg = info.to_string();
                                     self.warn.clear();
                                     self.storage = container
                                 }
                                 _ => {
-                                    let info: &str = "No notes found";
+                                    let info: &str = "❓ No notes found";
                                     self.warn = info.to_string();
                                     self.msg.clear();
                                 }
