@@ -207,7 +207,7 @@ impl eframe::App for GuiMenu {
                             for (key, value) in &self.storage {
                                 ui.label(format!("{}", idx));
                                 ui.label(
-                                    egui::RichText::new(format!("{}:: ", key,))
+                                    egui::RichText::new(format!("{}", key,))
                                         .size(20.0)
                                         .color(egui::Color32::from_rgb(
                                             76, 116, 166,

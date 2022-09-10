@@ -8,7 +8,8 @@ use std::{
 };
 
 pub fn get_date_and_time() -> String {
-    Local::now().to_string().replace(":", "_")
+    let local = Local::now();
+    local.format("%a %e %b %Y %T").to_string()
 }
 
 pub fn store_notes(
@@ -36,7 +37,7 @@ pub fn read_file(
 
     for line in lines {
         let mut tmp_storage: Vec<&str>;
-        tmp_storage = line.split(":").collect();
+        tmp_storage = line.split("|").collect();
         storage.insert(
             tmp_storage[0].trim().to_string(),
             tmp_storage[1].trim().to_string(),
@@ -57,7 +58,7 @@ pub fn write_to_file(
         .open(path)?;
 
     for (key, value) in content {
-        writeln!(file, "{}: {}", key, value)?;
+        writeln!(file, "{} | {}", key, value)?;
     }
     Ok(())
 }

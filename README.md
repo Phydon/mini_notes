@@ -28,5 +28,3 @@
 
 ### Work In Progress
 - [ ] TODO: add more functionality
-- [ ] TODO: show notes in a table
-- [ ] TODO: better / prettier timestamps
