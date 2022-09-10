@@ -1,7 +1,8 @@
 # MiniNotes
 ### gui app
 **a small application to take quick notes**
-=> powered by [egui](https://github.com/emilk/egui)
+
+=> *powered by [egui](https://github.com/emilk/egui)*
 
 ## Usage 
 
