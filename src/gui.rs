@@ -1,7 +1,7 @@
 use crate::lib::*;
 
 use eframe::egui;
-use log::warn;
+use log::{warn, error};
 
 use std::collections::BTreeMap;
 
@@ -147,18 +147,21 @@ impl eframe::App for GuiMenu {
                 }
 
                 ui.add_space(PADDING);
-                ui.label(
-                    egui::RichText::new(format!("{}", self.msg))
-                        .size(20.0)
-                        .color(egui::Color32::from_rgb(78, 91, 173)),
-                );
-                ui.add_space(PADDING);
-
-                ui.label(
-                    egui::RichText::new(format!("{}", self.warn))
-                        .size(20.0)
-                        .color(egui::Color32::from_rgb(156, 16, 39)),
-                );
+                if self.warn.is_empty() {
+                    ui.label(
+                        egui::RichText::new(format!("{}", self.msg))
+                            .size(20.0)
+                            .color(egui::Color32::from_rgb(78, 91, 173)),
+                    );
+                } else if self.msg.is_empty() {
+                    ui.label(
+                        egui::RichText::new(format!("{}", self.warn))
+                            .size(20.0)
+                            .color(egui::Color32::from_rgb(156, 16, 39)),
+                    );
+                } else {
+                    error!("Unable to show messages: self.msg and self.warn are not empty");
+                }
                 ui.add_space(PADDING);
             });
             ui.separator();
