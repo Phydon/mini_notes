@@ -185,6 +185,9 @@ impl eframe::App for GuiMenu {
                                     let info: &str = "✔ Notes loaded";
                                     self.msg = info.to_string();
                                     self.warn.clear();
+                                    // FIXME panics when old notes not loaded
+                                    // yet and a new note is stored in self.storage
+                                    // merge the 2 BTreeMaps
                                     self.storage = container
                                 }
                                 _ => {
@@ -227,7 +230,6 @@ impl eframe::App for GuiMenu {
                                 idx += 1;
                             }
                         });
-
                 });
             });
             ui.add_space(2.0);

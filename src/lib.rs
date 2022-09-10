@@ -46,6 +46,21 @@ pub fn read_file(
     Ok(storage)
 }
 
+// FIXME
+pub fn combine_storages(
+    first: BTreeMap<String, String>, 
+    second: BTreeMap<String, String>
+) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
+    if first.is_empty() {
+         Ok(second)
+    } else if second.is_empty() {
+         Ok(first)
+    } else {
+        first.append(&second);
+        Ok(first)
+    }
+}
+
 pub fn write_to_file(
     path: &str,
     content: &BTreeMap<String, String>,
