@@ -62,7 +62,6 @@ impl eframe::App for GuiMenu {
                 ui.with_layout(
                     egui::Layout::right_to_left(egui::Align::RIGHT),
                     |ui| {
-                        // if ui.add(egui::Button::new("❌")).clicked() {
                         if ui.add(egui::Button::new("🇽")).clicked() {
                             self.on_close_event();
                         }
@@ -108,7 +107,7 @@ impl eframe::App for GuiMenu {
                         .strong()
                         .color(egui::Color32::from_rgb(6, 165, 149)),
                 );
-                ui.add(egui::TextEdit::multiline(&mut self.note.note_txt).hint_text("Enter your text here"));
+                ui.add(egui::TextEdit::singleline(&mut self.note.note_txt).hint_text("Enter your text here"));
             });
             ui.add_space(PADDING);
 

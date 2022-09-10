@@ -8,8 +8,7 @@ use std::{
 };
 
 pub fn get_date_and_time() -> String {
-    let local = Local::now();
-    local.format("%a %e %b %Y %T").to_string()
+    Local::now().format("%a %e %b %Y %T").to_string()
 }
 
 pub fn store_notes(
@@ -17,7 +16,7 @@ pub fn store_notes(
     idx: &str,
     note: &str,
 ) -> Result<(), Box<dyn Error>> {
-    storage.insert(idx.to_string(), note.to_string());
+    storage.entry(idx.to_string()).or_insert(note.to_string());
     Ok(())
 }
 
@@ -38,10 +37,9 @@ pub fn read_file(
     for line in lines {
         let mut tmp_storage: Vec<&str>;
         tmp_storage = line.split("|").collect();
-        storage.insert(
-            tmp_storage[0].trim().to_string(),
-            tmp_storage[1].trim().to_string(),
-        );
+        storage
+            .entry(tmp_storage[0].trim().to_string())
+            .or_insert(tmp_storage[1].trim().to_string());
         tmp_storage.clear();
     }
 
@@ -52,13 +50,12 @@ pub fn write_to_file(
     path: &str,
     content: &BTreeMap<String, String>,
 ) -> Result<(), Box<dyn Error>> {
-    let mut file = fs::OpenOptions::new()
-        .append(true)
-        .create(true)
-        .open(path)?;
+    let mut file =
+        fs::OpenOptions::new().write(true).create(true).open(path)?;
 
     for (key, value) in content {
         writeln!(file, "{} | {}", key, value)?;
     }
+
     Ok(())
 }
