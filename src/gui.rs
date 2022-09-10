@@ -198,24 +198,34 @@ impl eframe::App for GuiMenu {
 
             ui.vertical_centered_justified(|ui| {
                 egui::containers::ScrollArea::both().show(ui, |ui| {
-                    for (key, value) in &self.storage {
-                        ui.horizontal_wrapped(|ui| {
-                            ui.label(
-                                egui::RichText::new(format!("{}:: ", key,))
-                                    .size(20.0)
-                                    .color(egui::Color32::from_rgb(
-                                        76, 116, 166,
-                                    )),
-                            );
-                            ui.label(
-                                egui::RichText::new(format!("{}", value,))
-                                    .size(25.0)
-                                    .color(egui::Color32::from_rgb(
-                                        22, 146, 196,
-                                    )),
-                            );
+                    egui::Grid::new("my_grid")
+                        .num_columns(3)
+                        .spacing([40.0, 4.0])
+                        .striped(true)
+                        .show(ui, |ui| {
+                            let mut idx: u64 = 1;
+                            for (key, value) in &self.storage {
+                                ui.label(format!("{}", idx));
+                                ui.label(
+                                    egui::RichText::new(format!("{}:: ", key,))
+                                        .size(20.0)
+                                        .color(egui::Color32::from_rgb(
+                                            76, 116, 166,
+                                        )),
+                                );
+
+                                ui.label(
+                                    egui::RichText::new(format!("{}", value,))
+                                        .size(25.0)
+                                        .color(egui::Color32::from_rgb(
+                                            22, 146, 196,
+                                        )),
+                                );
+                                ui.end_row();
+                                idx += 1;
+                            }
                         });
-                    }
+
                 });
             });
             ui.add_space(2.0);
