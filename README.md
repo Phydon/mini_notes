@@ -1,6 +1,6 @@
 # MiniNotes
-### gui app
-**a small application to take quick notes**
+### easy-to-use gui app
+**a small application to take quick notes written in rust**
 
 => *powered by [egui](https://github.com/emilk/egui)*
 
