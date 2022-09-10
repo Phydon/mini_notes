@@ -1,7 +1,7 @@
 use crate::lib::*;
 
 use eframe::egui;
-use log::{warn, error};
+use log::{error, warn};
 
 use std::collections::BTreeMap;
 
@@ -90,7 +90,10 @@ impl eframe::App for GuiMenu {
             ui.add_space(2.0);
             ui.vertical_centered_justified(|ui| {
                 ui.hyperlink("leann.phydon@gmail.com");
-                ui.label(egui::RichText::new("PoweredByRust").color(egui::Color32::from_rgb(156, 16, 39)));
+                ui.label(
+                    egui::RichText::new("PoweredByRust")
+                        .color(egui::Color32::from_rgb(156, 16, 39)),
+                );
             });
             ui.add_space(2.0);
         });
