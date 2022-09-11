@@ -8,15 +8,17 @@ use std::{
 };
 
 pub fn get_date_and_time() -> String {
+    // panics when adding '%.3f' or something similar
+    // -> chrono error
     Local::now().format("%a %e %b %Y %T").to_string()
 }
 
 pub fn store_notes(
     storage: &mut BTreeMap<String, String>,
-    idx: &str,
+    date: &str,
     note: &str,
 ) -> Result<(), Box<dyn Error>> {
-    storage.entry(idx.to_string()).or_insert(note.to_string());
+    storage.entry(date.to_string()).or_insert(note.to_string());
     Ok(())
 }
 
@@ -46,21 +48,23 @@ pub fn read_file(
     Ok(storage)
 }
 
-// FIXME
-pub fn combine_storages(
-    first: BTreeMap<String, String>, 
-    second: BTreeMap<String, String>
-) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
-    if first.is_empty() {
-         Ok(second)
-    } else if second.is_empty() {
-         Ok(first)
+pub fn combine_storages<'a>(
+    in_storage: &'a mut BTreeMap<String, String>,
+    out_storage: &'a mut BTreeMap<String, String>,
+) -> Option<BTreeMap<String, String>> {
+    // duplicate records (keys) should be impossible
+    if out_storage.is_empty() {
+        return None;
     } else {
-        first.append(&second);
-        Ok(first)
+        in_storage.append(out_storage);
     }
+
+    Some(in_storage.clone())
 }
 
+// TODO seems to have a problem with longer text
+// when writing to txt file
+// -> limit it??
 pub fn write_to_file(
     path: &str,
     content: &BTreeMap<String, String>,

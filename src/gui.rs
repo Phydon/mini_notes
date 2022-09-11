@@ -23,7 +23,8 @@ struct Note {
 #[derive(Default, PartialEq)]
 pub struct GuiMenu {
     note: Note,
-    storage: BTreeMap<String, String>,
+    in_storage: BTreeMap<String, String>,
+    out_storage: BTreeMap<String, String>,
     msg: String,
     warn: String,
     allowed_to_close: bool,
@@ -40,7 +41,8 @@ impl eframe::App for GuiMenu {
         // for the reset button
         let Self {
             note: _,
-            storage: _,
+            in_storage: _,
+            out_storage: _,
             msg: _,
             warn: _,
             allowed_to_close: _,
@@ -107,7 +109,10 @@ impl eframe::App for GuiMenu {
                         .strong()
                         .color(egui::Color32::from_rgb(6, 165, 149)),
                 );
-                ui.add(egui::TextEdit::singleline(&mut self.note.note_txt).hint_text("Enter your text here"));
+                ui.add(
+                    egui::TextEdit::singleline(&mut self.note.note_txt)
+                    .hint_text("Enter your text here")
+                );
             });
             ui.add_space(PADDING);
 
@@ -118,12 +123,12 @@ impl eframe::App for GuiMenu {
                 {
                     self.note.date = get_date_and_time();
                     match store_notes(
-                        &mut self.storage,
+                        &mut self.in_storage,
                         &self.note.date,
                         &self.note.note_txt,
                     ) {
                         Ok(()) => {
-                            match write_to_file(FILEPATH, &self.storage) {
+                            match write_to_file(FILEPATH, &self.in_storage) {
                                 Ok(()) => {
                                     let success_msg: &str =
                                         "✔ Note written to file";
@@ -185,10 +190,14 @@ impl eframe::App for GuiMenu {
                                     let info: &str = "✔ Notes loaded";
                                     self.msg = info.to_string();
                                     self.warn.clear();
-                                    // FIXME panics when old notes not loaded
-                                    // yet and a new note is stored in self.storage
-                                    // merge the 2 BTreeMaps
-                                    self.storage = container
+                                    self.out_storage = container;
+
+                                    if let Some(store) = combine_storages(
+                                        &mut self.in_storage,
+                                        &mut self.out_storage
+                                    ) {
+                                        self.in_storage = store
+                                    }
                                 }
                                 _ => {
                                     let info: &str = "❓ No notes found";
@@ -209,7 +218,7 @@ impl eframe::App for GuiMenu {
                         .striped(true)
                         .show(ui, |ui| {
                             let mut idx: u64 = 1;
-                            for (key, value) in &self.storage {
+                            for (key, value) in &self.in_storage {
                                 ui.label(format!("{}", idx));
                                 ui.label(
                                     egui::RichText::new(format!("{}", key,))
