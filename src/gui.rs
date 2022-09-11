@@ -2,11 +2,9 @@ use crate::note::Note;
 use crate::util::*;
 
 use eframe::egui;
-use log::{error, warn};
+use log::{error, info, warn};
 
-use std::collections::BTreeMap;
-
-const FILEPATH: &str = "./my_mininotes.txt";
+const PATH_TO_RON: &str = "./my_mininotes.ron";
 const WINDOW_WIDTH: f32 = 380.0;
 const WINDOW_HEIGHT: f32 = 560.0;
 const CENTER: (f32, f32) = (
@@ -19,8 +17,7 @@ const PADDING: f32 = 10.0;
 pub struct GuiMenu {
     note: Note,
     records: Vec<Note>,
-    in_storage: BTreeMap<String, String>,
-    out_storage: BTreeMap<String, String>,
+    out_records: Vec<Note>,
     msg: String,
     warn: String,
     allowed_to_close: bool,
@@ -38,8 +35,7 @@ impl eframe::App for GuiMenu {
         let Self {
             note: _,
             records: _,
-            in_storage: _,
-            out_storage: _,
+            out_records: _,
             msg: _,
             warn: _,
             allowed_to_close: _,
@@ -121,13 +117,13 @@ impl eframe::App for GuiMenu {
                     self.note.date = get_date_and_time();
                     self.records.push(self.note.clone());
 
-                    match store_notes(
-                        &mut self.in_storage,
+                    match store_note(
+                        &mut self.records,
                         &self.note.date,
                         &self.note.txt,
                     ) {
                         Ok(()) => {
-                            match write_to_file(FILEPATH, &self.in_storage) {
+                            match write_to_file(PATH_TO_RON, &self.records) {
                                 Ok(()) => {
                                     let success_msg: &str =
                                         "✔ Note written to file";
@@ -184,24 +180,25 @@ impl eframe::App for GuiMenu {
                             )
                             .clicked()
                         {
-                            match read_file(FILEPATH) {
+                            match read_file(PATH_TO_RON) {
                                 Ok(container) => {
                                     let info: &str = "✔ Notes loaded";
                                     self.msg = info.to_string();
                                     self.warn.clear();
-                                    self.out_storage = container;
+                                    self.out_records = container;
 
                                     if let Some(store) = combine_storages(
-                                        &mut self.in_storage,
-                                        &mut self.out_storage
+                                        &mut self.records,
+                                        &mut self.out_records
                                     ) {
-                                        self.in_storage = store
+                                        self.records = store
                                     }
                                 }
-                                _ => {
+                                Err(err) => {
                                     let info: &str = "❓ No notes found";
                                     self.warn = info.to_string();
                                     self.msg.clear();
+                                    info!("{info}: {err}");
                                 }
                             }
                         }
@@ -217,10 +214,10 @@ impl eframe::App for GuiMenu {
                         .striped(true)
                         .show(ui, |ui| {
                             let mut idx: u64 = 1;
-                            for (key, value) in &self.in_storage {
+                            for note in &self.records {
                                 ui.label(format!("{}", idx));
                                 ui.label(
-                                    egui::RichText::new(format!("{}", key,))
+                                    egui::RichText::new(format!("{}", note.date,))
                                         .size(20.0)
                                         .color(egui::Color32::from_rgb(
                                             76, 116, 166,
@@ -228,7 +225,7 @@ impl eframe::App for GuiMenu {
                                 );
 
                                 ui.label(
-                                    egui::RichText::new(format!("{}", value,))
+                                    egui::RichText::new(format!("{}", note.txt,))
                                         .size(25.0)
                                         .color(egui::Color32::from_rgb(
                                             22, 146, 196,
