@@ -1,3 +1,5 @@
+// use crate::note::Note;
+
 use chrono::Local;
 
 use std::{
@@ -36,6 +38,8 @@ pub fn read_file(
 
     let mut storage: BTreeMap<String, String> = BTreeMap::new();
 
+    // FIXME panics when empty line in file or pattern isn`t as expected
+    // 'index out of bounds: the len is 1 but the index is 1', src/lib.rs:44:24
     for line in lines {
         let mut tmp_storage: Vec<&str>;
         tmp_storage = line.split("|").collect();
@@ -77,4 +81,9 @@ pub fn write_to_file(
     }
 
     Ok(())
+}
+
+// TODO use a database
+pub fn database() {
+    todo!();
 }

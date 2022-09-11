@@ -1,9 +1,10 @@
 // hide console window on Windows in release
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-mod gui;
+pub mod gui;
+pub mod note;
+pub mod util;
 use crate::gui::GuiMenu;
-mod lib;
 
 use eframe::egui;
 use flexi_logger::{detailed_format, Duplicate, FileSpec, Logger};

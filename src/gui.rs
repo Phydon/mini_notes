@@ -1,4 +1,5 @@
-use crate::lib::*;
+use crate::note::Note;
+use crate::util::*;
 
 use eframe::egui;
 use log::{error, warn};
@@ -15,14 +16,9 @@ const CENTER: (f32, f32) = (
 const PADDING: f32 = 10.0;
 
 #[derive(Default, PartialEq)]
-struct Note {
-    note_txt: String,
-    date: String,
-}
-
-#[derive(Default, PartialEq)]
 pub struct GuiMenu {
     note: Note,
+    records: Vec<Note>,
     in_storage: BTreeMap<String, String>,
     out_storage: BTreeMap<String, String>,
     msg: String,
@@ -41,6 +37,7 @@ impl eframe::App for GuiMenu {
         // for the reset button
         let Self {
             note: _,
+            records: _,
             in_storage: _,
             out_storage: _,
             msg: _,
@@ -110,7 +107,7 @@ impl eframe::App for GuiMenu {
                         .color(egui::Color32::from_rgb(6, 165, 149)),
                 );
                 ui.add(
-                    egui::TextEdit::singleline(&mut self.note.note_txt)
+                    egui::TextEdit::singleline(&mut self.note.txt)
                     .hint_text("Enter your text here")
                 );
             });
@@ -122,10 +119,12 @@ impl eframe::App for GuiMenu {
                     .clicked()
                 {
                     self.note.date = get_date_and_time();
+                    self.records.push(self.note.clone());
+
                     match store_notes(
                         &mut self.in_storage,
                         &self.note.date,
-                        &self.note.note_txt,
+                        &self.note.txt,
                     ) {
                         Ok(()) => {
                             match write_to_file(FILEPATH, &self.in_storage) {
