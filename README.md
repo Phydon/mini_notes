@@ -4,6 +4,12 @@
 
 *powered by [egui](https://github.com/emilk/egui)*
 
+## Table of Contents
+
+[Usage](https://github.com/Phydon/mini_notes#usage)
+[Installation](https://github.com/Phydon/mini_notes#installation)
+[bugs--errors--criticism--advise](https://github.com/Phydon/mini_notes#bugs--errors--criticism--advise)
+
 ## Usage 
 
 - open the app and start taking notes
@@ -24,7 +30,7 @@
 - you can find the executable in the 'target/release' folder
 
 ## Bugs / Errors / Criticism / Advise
-=> leann.phydon@gmail.com
+ > leann.phydon@gmail.com
 
 ### Work In Progress
 - [ ] TODO: add more functionality
