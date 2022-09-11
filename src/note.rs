@@ -18,4 +18,12 @@ impl Note {
 
         Ok(Note { id, date, txt })
     }
+
+    pub fn delete() {
+        todo!();
+    }
+
+    pub fn update() {
+        todo!();
+    }
 }

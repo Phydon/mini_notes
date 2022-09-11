@@ -47,6 +47,7 @@ pub fn combine_storages<'a>(
         return None;
     } else {
         in_storage.append(out_storage);
+        // TODO remove duplicates
     }
 
     Some(in_storage.clone())
@@ -60,7 +61,9 @@ pub fn write_to_file(
         fs::OpenOptions::new().write(true).create(true).open(path)?;
 
     for note in notes {
-        writeln!(file, "{}", ron::to_string(&note)?)?;
+        if note.id.to_string() != "00000000-0000-0000-0000-000000000000" {
+            writeln!(file, "{}", ron::to_string(&note)?)?;
+        }
     }
 
     Ok(())
