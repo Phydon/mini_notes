@@ -6,9 +6,9 @@
 
 ## Table of Contents
 
-[Usage](https://github.com/Phydon/mini_notes#usage)
-[Installation](https://github.com/Phydon/mini_notes#installation)
-[bugs--errors--criticism--advise](https://github.com/Phydon/mini_notes#bugs--errors--criticism--advise)
+- [Usage](https://github.com/Phydon/mini_notes#usage)
+- [Installation](https://github.com/Phydon/mini_notes#installation)
+- [bugs--errors--criticism--advise](https://github.com/Phydon/mini_notes#bugs--errors--criticism--advise)
 
 ## Usage 
 
