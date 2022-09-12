@@ -8,7 +8,8 @@
 
 - [Usage](https://github.com/Phydon/mini_notes#usage)
 - [Installation](https://github.com/Phydon/mini_notes#installation)
-- [bugs--errors--criticism--advise](https://github.com/Phydon/mini_notes#bugs--errors--criticism--advise)
+- [Bugs/Errors/Criticism/Advise](https://github.com/Phydon/mini_notes#bugs--errors--criticism--advise)
+- [TODO](https://github.com/Phydon/mini_notes#work-in-progress)
 
 ## Usage 
 
@@ -34,3 +35,6 @@
 
 ### Work In Progress
 - [ ] TODO: add more functionality
+- [ ] TODO: remove notes
+- [ ] TODO: change notes
+- [ ] TODO: order notes differently
