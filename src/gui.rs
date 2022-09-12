@@ -239,9 +239,10 @@ impl eframe::App for GuiMenu {
             ui.vertical_centered_justified(|ui| {
                 egui::containers::ScrollArea::both().show(ui, |ui| {
                     egui::Grid::new("my_grid")
-                        .num_columns(3)
-                        .spacing([40.0, 4.0])
+                        .num_columns(4)
+                        .spacing([10.0, 4.0])
                         .striped(true)
+                        .max_col_width(WINDOW_WIDTH)
                         .show(ui, |ui| {
                             let mut idx: u64 = 1;
                             for note in &self.records {
