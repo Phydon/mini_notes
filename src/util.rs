@@ -6,20 +6,24 @@ use std::{
     error::Error,
     fs,
     io::{prelude::*, BufReader, Write},
+    collections::HashSet,
 };
 
-pub fn get_date_and_time() -> String {
+pub fn get_date_and_time() -> (String, String) {
     // panics when adding '%.3f' or something similar
     // -> chrono error
-    Local::now().format("%a %e %b %Y %T").to_string()
+    let date = Local::now().format("%a %e %b %Y").to_string();
+    let time = Local::now().format("%T").to_string();
+
+    (date, time)
 }
 
 pub fn store_note(
     storage: &mut Vec<Note>,
-    date: &str,
+    date: &(String, String),
     txt: &str,
 ) -> Result<(), Box<dyn Error>> {
-    let note: Note = Note::new(date.to_string(), txt.to_string())?;
+    let note: Note = Note::new((date.0.to_string(), date.1.to_string()), txt.to_string())?;
     storage.push(note);
 
     Ok(())
@@ -39,18 +43,35 @@ pub fn read_file(path: &str) -> Result<Vec<Note>, Box<dyn Error>> {
     Ok(records)
 }
 
-pub fn combine_storages<'a>(
-    in_storage: &'a mut Vec<Note>,
-    out_storage: &'a mut Vec<Note>,
+fn remove_duplicates(items: &mut Vec<Note>) -> Vec<Note> {
+    let mut tmp_set: HashSet<Note> = HashSet::new();
+    for item in items {
+        tmp_set.insert(item.clone());
+    }
+
+    let mut unique_items: Vec<Note> = Vec::new();
+    for unique in tmp_set {
+        unique_items.push(unique);
+    }
+
+    unique_items
+}
+
+pub fn combine_storages(
+    in_storage: &mut Vec<Note>,
+    out_storage: &mut Vec<Note>,
 ) -> Option<Vec<Note>> {
+    let mut unique_storage: Vec<Note>;
+
     if out_storage.is_empty() {
         return None;
     } else {
         in_storage.append(out_storage);
-        // TODO remove duplicates
+        unique_storage = remove_duplicates(in_storage);
+        unique_storage.sort_by(|a, b| a.date.1.partial_cmp(&b.date.1).unwrap());
     }
 
-    Some(in_storage.clone())
+    Some(unique_storage)
 }
 
 pub fn write_to_file(

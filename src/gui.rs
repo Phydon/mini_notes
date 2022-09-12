@@ -217,7 +217,15 @@ impl eframe::App for GuiMenu {
                             for note in &self.records {
                                 ui.label(format!("{}", idx));
                                 ui.label(
-                                    egui::RichText::new(format!("{}", note.date,))
+                                    egui::RichText::new(format!("{}", note.date.0,))
+                                        .size(20.0)
+                                        .color(egui::Color32::from_rgb(
+                                            76, 116, 166,
+                                        )),
+                                );
+
+                                ui.label(
+                                    egui::RichText::new(format!("{}", note.date.1,))
                                         .size(20.0)
                                         .color(egui::Color32::from_rgb(
                                             76, 116, 166,
