@@ -24,6 +24,50 @@ pub struct GuiMenu {
     show_confirmation_dialog: bool,
 }
 
+impl GuiMenu {
+    fn load_notes(&mut self) {
+        match read_file(PATH_TO_RON) {
+            Ok(container) => {
+                let info: &str = "✔ Notes loaded";
+                self.msg = info.to_string();
+                self.warn.clear();
+                self.out_records = container;
+
+                if let Some(store) = combine_storages(
+                    &mut self.records,
+                    &mut self.out_records
+                ) {
+                    self.records = store
+                }
+            }
+            Err(err) => {
+                let info: &str = "✖ Unable to load notes";
+                self.warn = info.to_string();
+                self.msg.clear();
+                info!("{info}: {err}");
+            }
+        }
+    }
+
+    fn save_notes(&mut self) {
+        match write_to_file(PATH_TO_RON, &self.records) {
+            Ok(()) => {
+                let success_msg: &str =
+                    "✔ Note written to file";
+                self.msg = success_msg.to_string();
+                self.warn.clear();
+            }
+            Err(err) => {
+                let err_msg: &str =
+                    "✖ Unable to write to file";
+                self.warn = err_msg.to_string();
+                self.msg.clear();
+                warn!("{err_msg}: {err}")
+            }
+        }
+    }
+}
+
 impl eframe::App for GuiMenu {
     fn on_close_event(&mut self) -> bool {
         self.show_confirmation_dialog = true;
@@ -41,6 +85,26 @@ impl eframe::App for GuiMenu {
             allowed_to_close: _,
             show_confirmation_dialog: _,
         } = self;
+
+        if self.show_confirmation_dialog {
+            // Show confirmation dialog:
+            egui::Window::new("Do you want to quit?")
+                .collapsible(false)
+                .resizable(false)
+                .default_pos(CENTER)
+                .show(ctx, |ui| {
+                    ui.horizontal(|ui| {
+                        if ui.button("Cancel").clicked() {
+                            self.show_confirmation_dialog = false;
+                        }
+
+                        if ui.button("Yes!").clicked() {
+                            self.allowed_to_close = true;
+                            frame.close();
+                        }
+                    });
+                });
+        }
 
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             ui.add_space(2.0);
@@ -114,27 +178,7 @@ impl eframe::App for GuiMenu {
                     .add_sized([120., 25.], egui::Button::new("💾 Save"))
                     .clicked()
                 {
-                    match read_file(PATH_TO_RON) {
-                        Ok(container) => {
-                            let info: &str = "✔ Notes loaded";
-                            self.msg = info.to_string();
-                            self.warn.clear();
-                            self.out_records = container;
-
-                            if let Some(store) = combine_storages(
-                                &mut self.records,
-                                &mut self.out_records
-                            ) {
-                                self.records = store
-                            }
-                        }
-                        Err(err) => {
-                            let info: &str = "✖ Unable to load notes";
-                            self.warn = info.to_string();
-                            self.msg.clear();
-                            info!("{info}: {err}");
-                        }
-                    }
+                    GuiMenu::load_notes(self);
 
                     self.note.date = get_date_and_time();
                     match store_note(
@@ -143,21 +187,7 @@ impl eframe::App for GuiMenu {
                         &self.note.txt,
                     ) {
                         Ok(()) => {
-                            match write_to_file(PATH_TO_RON, &self.records) {
-                                Ok(()) => {
-                                    let success_msg: &str =
-                                        "✔ Note written to file";
-                                    self.msg = success_msg.to_string();
-                                    self.warn.clear();
-                                }
-                                Err(err) => {
-                                    let err_msg: &str =
-                                        "✖ Unable to write to file";
-                                    self.warn = err_msg.to_string();
-                                    self.msg.clear();
-                                    warn!("{err_msg}: {err}")
-                                }
-                            }
+                            GuiMenu::save_notes(self);
                         }
                         Err(err) => {
                             let err_msg: &str = "✖ Unable to store note";
@@ -200,27 +230,7 @@ impl eframe::App for GuiMenu {
                             )
                             .clicked()
                         {
-                            match read_file(PATH_TO_RON) {
-                                Ok(container) => {
-                                    let info: &str = "✔ Notes loaded";
-                                    self.msg = info.to_string();
-                                    self.warn.clear();
-                                    self.out_records = container;
-
-                                    if let Some(store) = combine_storages(
-                                        &mut self.records,
-                                        &mut self.out_records
-                                    ) {
-                                        self.records = store
-                                    }
-                                }
-                                Err(err) => {
-                                    let info: &str = "✖ Unable to load notes";
-                                    self.warn = info.to_string();
-                                    self.msg.clear();
-                                    info!("{info}: {err}");
-                                }
-                            }
+                            GuiMenu::load_notes(self);
                         }
                     },
                 );
@@ -236,6 +246,7 @@ impl eframe::App for GuiMenu {
                             let mut idx: u64 = 1;
                             for note in &self.records {
                                 ui.label(format!("{}", idx));
+
                                 ui.label(
                                     egui::RichText::new(format!("{}", note.date.0,))
                                         .size(20.0)
@@ -259,6 +270,7 @@ impl eframe::App for GuiMenu {
                                             22, 146, 196,
                                         )),
                                 );
+
                                 ui.end_row();
                                 idx += 1;
                             }
@@ -266,26 +278,6 @@ impl eframe::App for GuiMenu {
                 });
             });
             ui.add_space(2.0);
-
-            if self.show_confirmation_dialog {
-                // Show confirmation dialog:
-                egui::Window::new("Do you want to quit?")
-                    .collapsible(false)
-                    .resizable(false)
-                    .default_pos(CENTER)
-                    .show(ctx, |ui| {
-                        ui.horizontal(|ui| {
-                            if ui.button("Cancel").clicked() {
-                                self.show_confirmation_dialog = false;
-                            }
-
-                            if ui.button("Yes!").clicked() {
-                                self.allowed_to_close = true;
-                                frame.close();
-                            }
-                        });
-                    });
-            }
         });
     }
 }
