@@ -194,7 +194,7 @@ impl eframe::App for GuiMenu {
                                     }
                                 }
                                 Err(err) => {
-                                    let info: &str = "❓ No notes found";
+                                    let info: &str = "✖ Unable to load notes";
                                     self.warn = info.to_string();
                                     self.msg.clear();
                                     info!("{info}: {err}");
