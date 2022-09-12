@@ -3,10 +3,10 @@ use crate::note::Note;
 use chrono::Local;
 
 use std::{
+    collections::HashSet,
     error::Error,
     fs,
     io::{prelude::*, BufReader, Write},
-    collections::HashSet,
 };
 
 pub fn get_date_and_time() -> (String, String) {
@@ -23,7 +23,8 @@ pub fn store_note(
     date: &(String, String),
     txt: &str,
 ) -> Result<(), Box<dyn Error>> {
-    let note: Note = Note::new((date.0.to_string(), date.1.to_string()), txt.to_string())?;
+    let note: Note =
+        Note::new((date.0.to_string(), date.1.to_string()), txt.to_string())?;
     storage.push(note);
 
     Ok(())
@@ -82,9 +83,7 @@ pub fn write_to_file(
         fs::OpenOptions::new().write(true).create(true).open(path)?;
 
     for note in notes {
-        if note.id.to_string() != "00000000-0000-0000-0000-000000000000" {
-            writeln!(file, "{}", ron::to_string(&note)?)?;
-        }
+        writeln!(file, "{}", ron::to_string(&note)?)?;
     }
 
     Ok(())

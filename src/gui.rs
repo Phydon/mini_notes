@@ -115,7 +115,6 @@ impl eframe::App for GuiMenu {
                     .clicked()
                 {
                     self.note.date = get_date_and_time();
-                    self.records.push(self.note.clone());
 
                     match store_note(
                         &mut self.records,
