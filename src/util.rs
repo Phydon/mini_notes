@@ -6,7 +6,7 @@ use std::{
     collections::HashSet,
     error::Error,
     fs,
-    io::{prelude::*, BufReader, Write, BufWriter},
+    io::{prelude::*, BufReader, BufWriter, Write},
 };
 
 pub fn get_date_and_time() -> (String, String) {
@@ -79,10 +79,9 @@ pub fn write_to_file(
     path: &str,
     notes: &Vec<Note>,
 ) -> Result<(), Box<dyn Error>> {
-    let file =
-        fs::OpenOptions::new().write(true).create(true).open(path)?;
+    let file = fs::OpenOptions::new().write(true).create(true).open(path)?;
 
-    let mut writer = BufWriter::with_capacity(20000, file);
+    let mut writer = BufWriter::with_capacity(30000, file);
     for note in notes {
         writer.write(ron::to_string(&note)?.as_bytes())?;
         writer.write(b"\n")?;

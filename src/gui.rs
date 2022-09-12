@@ -114,8 +114,29 @@ impl eframe::App for GuiMenu {
                     .add_sized([120., 25.], egui::Button::new("💾 Save"))
                     .clicked()
                 {
-                    self.note.date = get_date_and_time();
+                    match read_file(PATH_TO_RON) {
+                        Ok(container) => {
+                            let info: &str = "✔ Notes loaded";
+                            self.msg = info.to_string();
+                            self.warn.clear();
+                            self.out_records = container;
 
+                            if let Some(store) = combine_storages(
+                                &mut self.records,
+                                &mut self.out_records
+                            ) {
+                                self.records = store
+                            }
+                        }
+                        Err(err) => {
+                            let info: &str = "✖ Unable to load notes";
+                            self.warn = info.to_string();
+                            self.msg.clear();
+                            info!("{info}: {err}");
+                        }
+                    }
+
+                    self.note.date = get_date_and_time();
                     match store_note(
                         &mut self.records,
                         &self.note.date,
