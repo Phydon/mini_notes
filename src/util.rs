@@ -75,6 +75,22 @@ pub fn combine_storages(
     Some(unique_storage)
 }
 
+pub fn delete_note<'a>(
+    storage: &'a mut Vec<Note>,
+    idx: &'a mut String,
+) -> Result<&'a mut Vec<Note>, Box<dyn Error>> {
+    let _ = storage.remove(idx.parse::<u32>()? as usize - 1);
+
+    Ok(storage)
+}
+
+pub fn update_note(
+    storage: &mut Vec<Note>,
+    idx: i32,
+) -> Result<Vec<Note>, Box<dyn Error>> {
+    todo!();
+}
+
 pub fn write_to_file(
     path: &str,
     notes: &Vec<Note>,

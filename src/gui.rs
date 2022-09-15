@@ -18,10 +18,13 @@ pub struct GuiMenu {
     note: Note,
     records: Vec<Note>,
     out_records: Vec<Note>,
+    idx: String,
     msg: String,
     warn: String,
     allowed_to_close: bool,
     show_confirmation_dialog: bool,
+    closable: bool,
+    open: bool,
 }
 
 impl GuiMenu {
@@ -33,10 +36,9 @@ impl GuiMenu {
                 self.warn.clear();
                 self.out_records = container;
 
-                if let Some(store) = combine_storages(
-                    &mut self.records,
-                    &mut self.out_records
-                ) {
+                if let Some(store) =
+                    combine_storages(&mut self.records, &mut self.out_records)
+                {
                     self.records = store
                 }
             }
@@ -52,14 +54,12 @@ impl GuiMenu {
     fn save_notes(&mut self) {
         match write_to_file(PATH_TO_RON, &self.records) {
             Ok(()) => {
-                let success_msg: &str =
-                    "✔ Note written to file";
+                let success_msg: &str = "✔ Note written to file";
                 self.msg = success_msg.to_string();
                 self.warn.clear();
             }
             Err(err) => {
-                let err_msg: &str =
-                    "✖ Unable to write to file";
+                let err_msg: &str = "✖ Unable to write to file";
                 self.warn = err_msg.to_string();
                 self.msg.clear();
                 warn!("{err_msg}: {err}")
@@ -80,10 +80,13 @@ impl eframe::App for GuiMenu {
             note: _,
             records: _,
             out_records: _,
+            idx: _,
             msg: _,
             warn: _,
             allowed_to_close: _,
             show_confirmation_dialog: _,
+            closable: _,
+            open: _,
         } = self;
 
         if self.show_confirmation_dialog {
@@ -232,6 +235,47 @@ impl eframe::App for GuiMenu {
                         {
                             GuiMenu::load_notes(self);
                         }
+
+                        // // FIXME window doesn`t stay open
+                        // if ui.add_sized([120., 25.], egui::Button::new("Delete note")).clicked() {
+                        //     let mut window = egui::Window::new("Do you want to quit?")
+                        //         .collapsible(false)
+                        //         .resizable(false)
+                        //         .default_pos(CENTER);
+
+                        //     if self.closable {
+                        //         window = window.open(&mut self.open);
+                        //     }
+
+                        //     window.show(ctx, |ui| {
+                        //         ui.vertical_centered_justified(|ui| {
+                        //             ui.add(
+                        //                 egui::TextEdit::singleline(&mut self.idx)
+                        //                 .hint_text("Enter the index of the note to delete")
+                        //             );
+
+                        //             ui.horizontal(|ui| {
+                        //                 if ui.button("Delete").clicked() {
+                        //                     match delete_note(&mut self.records, &mut self.idx) {
+                        //                         Ok(rec) => {
+                        //                             let info: &str = "✔ Note deleted";
+                        //                             self.msg = info.to_string();
+                        //                             self.warn.clear();
+                        //                             self.records = rec.to_vec();
+                        //                         }
+                        //                         Err(err) => {
+                        //                             let info: &str = "✖ Unable to delete note";
+                        //                             self.warn = info.to_string();
+                        //                             self.msg.clear();
+                        //                             info!("{info}: {err}");
+                        //                         }
+                        //                     }
+                        //                 }
+                        //             });
+
+                        //         });
+                        //     });
+                        // }
                     },
                 );
             });
