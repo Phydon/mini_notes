@@ -92,6 +92,7 @@ impl eframe::App for GuiMenu {
         if self.show_confirmation_dialog {
             // Show confirmation dialog:
             egui::Window::new("Do you want to quit?")
+                .id(egui::Id::new("quiting_window"))
                 .collapsible(false)
                 .resizable(false)
                 .default_pos(CENTER)
@@ -239,6 +240,7 @@ impl eframe::App for GuiMenu {
                         // // FIXME window doesn`t stay open
                         // if ui.add_sized([120., 25.], egui::Button::new("Delete note")).clicked() {
                         //     let mut window = egui::Window::new("Do you want to quit?")
+                        //         .id(egui::Id::new("delete_window"))
                         //         .collapsible(false)
                         //         .resizable(false)
                         //         .default_pos(CENTER);
